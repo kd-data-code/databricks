@@ -13,6 +13,7 @@ df = spark.createDataFrame(data = data, schema = columns)
 df.printSchema()
 df.show(truncate=False)
 
+
 # COMMAND ----------
 
 pivotDF = df.groupBy("Product").pivot("Country").sum("Amount")
